@@ -31,8 +31,13 @@ public class ContactsController {
     }
 
     @GetMapping("/contacts/{id}")
-    public ContactsModel findContactById(@PathVariable("id") UUID contactId) throws ContactNotFoundException {
+    public ContactsModel findContactById(@PathVariable("id") UUID contactId){
         return contactsService.findContactById(contactId);
+    }
+
+    @PutMapping("/contacts/{id}")
+    public ContactsModel updateContact(@PathVariable("id") UUID contactId, @RequestBody ContactsModel contactsModel){
+        return contactsService.updateContact(contactId, contactsModel);
     }
 
 

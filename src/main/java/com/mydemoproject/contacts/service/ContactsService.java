@@ -14,5 +14,8 @@ public interface ContactsService {
 
    List<ContactsModel> findContacts();
 
-   ContactsModel findContactById(UUID contactId) throws ContactNotFoundException;
+   ContactsModel findContactById(UUID contactId);
+
+   ContactsModel updateContact(UUID contactId, ContactsModel contactsModel);
+
 }
